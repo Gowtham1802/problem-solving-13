@@ -94,4 +94,79 @@ function reverseWordsInSentence(sentence) {
 
 // 6. Write a sum method which will work properly when invoked using either syntax below.
 
+function sum(x, y) {
+  if (y === undefined) {
+    return function(y) {
+      return x + y;
+    };
+  } else {
+    return x + y;
+  }
+}
+
+console.log(sum(32, 76)); 
+console.log(sum(32)(76)); 
+
+
+
+// 7. What will be the output of the code below?
+
+
+// Named Function Expression (NFE)
+// var Foo = function bar(a) {
+//   return 7;
+// };
+
+// typeof bar(a);
+
+
+
+// 8. Check if a given string is a valid palindrome, considering only alphanumeric characters and ignoring case.
+
+
+function isPalindrome(str) {
+  const alphanumericStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+  
+  const reversedStr = alphanumericStr.split('').reverse().join('');
+  
+  return alphanumericStr === reversedStr;
+}
+
+console.log(isPalindrome('A man, a plan, a canal, Panama, study'));
+console.log(isPalindrome('race car'));
+
+
+
+// 9. Write a function that counts how many times a specific element appears in an array.
+
+
+function countOccurrences(arr, element) {
+  let count = 0;
+  
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === element) {
+      count++;
+    }
+  }
+  
+  return count;
+}
+
+const arr = [1, 2, 2, 3, 4, 2, 5, 5, 3, 2, 7, 2];
+const count = countOccurrences(arr, 2);
+console.log(count); 
+
+
+
+// 10. Write a function that detects if a given substring exists in a larger string.
+
+
+function doesSubstringExist(largeString, substring) {
+  return largeString.includes(substring);
+}
+
+const largeString = "This is a sample string for testing.";
+const substring = "sample";
+console.log(doesSubstringExist(largeString, substring));
+
 
